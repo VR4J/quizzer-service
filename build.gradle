@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.vreijsen'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+	options.compilerArgs += "--enable-preview"
+}
+
+dependencies {
+	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	implementation('org.springframework:spring-context')
+
+	implementation('org.apache.poi:poi:5.1.0')
+	implementation('org.apache.poi:poi-ooxml:5.1.0')
+
+	implementation('commons-io:commons-io:2.11.0')
+
+	implementation("javax.servlet:javax.servlet-api:4.0.1")
+
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
