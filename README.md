@@ -1,6 +1,6 @@
 # Quizzer
 
-Describing blogpost: http://blog.vreijsenj.nl/2021/12/27/creating-a-christmas-family-quiz/
+Describing blogpost: https://blog.vreijsenj.nl/2021/12/28/creating-a-christmas-family-quiz/
 
 ## Technologies
 * Java 17
